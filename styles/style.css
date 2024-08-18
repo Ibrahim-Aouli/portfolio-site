@@ -31,17 +31,43 @@ body {
 
 body {
     min-height: 100vh;
+    background-color: var(--color-light);
+    color: var(--color-dark);
 }
+
+
+header,
+main,
+footer {
+    align-items: center;
+}
+
+*.content {
+    width: var(--screen-max-width);
+}
+
 
 main {
     flex: 1;
 }
+
+header,
+footer {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+}
+
 /* end - make the document take up the entire screen size */
 
 /* start - global styles */
 
 :root {
-    --color-red: red;
+    --color-highlight: #292;
+    --color-dark: #222;
+    --color-light: #eee;
+    --color-white: white;
+    --color-black: black;
+    --screen-max-width: 1440px;
 }
 
 /* end - global styles */
@@ -51,7 +77,7 @@ main {
 
 /* start - global components styling */
 
-header {
+header > .content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -71,11 +97,11 @@ footer .links {
 
 header .links li,
 footer .links li {
-    padding: 0 8px;
+    padding: 8px 8px;
 }
 
-header > *,
-footer > * {
+header > .content > *,
+footer > .content > * {
     width: 100%;
 }
 
@@ -87,12 +113,35 @@ header > .social > .links {
     justify-content: end;
 }
 
-.links a {
-    color: black;
+a {
+    color: var(--color-light);
     text-decoration: none;
 }
 
-.links a:hover {
-    color: var(--color-red);
+a:hover {
+    color: var(--color-highlight);
     text-decoration: underline;
+}
+
+button {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    border: none;
+    border-radius: 8px;
+    height: 32px;
+    width: 256px;
+}
+
+button:hover {
+    background-color: var(--color-highlight);
+    color: var(--color-white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-highlight);
 }
