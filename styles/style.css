@@ -33,6 +33,7 @@ body {
     min-height: 100vh;
     background-color: var(--color-light);
     color: var(--color-dark);
+    font-family: var(--font-family);
 }
 
 
@@ -46,6 +47,9 @@ footer {
     width: var(--screen-max-width);
 }
 
+section {
+    height: 100vh;
+}
 
 main {
     flex: 1;
@@ -68,6 +72,7 @@ footer {
     --color-white: white;
     --color-black: black;
     --screen-max-width: 1440px;
+    --font-family: 'Source Sans Pro', sans-serif; 
 }
 
 /* end - global styles */
@@ -82,7 +87,18 @@ header > .content {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    max-height: 64px;
     padding: 8px 32px;
+}
+
+header > .content .logo {
+    height: 100%;
+    width: 100%;
+}
+
+.logo img {
+    height: 64px;
+    width: 64px;
 }
 
 header .links,
@@ -145,3 +161,28 @@ h5,
 h6 {
     color: var(--color-highlight);
 }
+
+img {
+    width: auto;
+    height: 100%;
+}
+
+.z-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.z-grid > div {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
